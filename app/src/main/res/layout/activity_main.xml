@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Server Address: "
+        android:id="@+id/txt_server_address_label"
+        tools:ignore="HardcodedText,MissingConstraints"
+        app:layout_constraintTop_toTopOf="@id/txt_server_address"
+        app:layout_constraintBottom_toBottomOf="@id/txt_server_address"
+        android:textSize="18sp"/>
+
+    <AutoCompleteTextView
+        android:imeOptions="flagNoExtractUi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="https://taliserver.herokuapp.com"
+        android:id="@+id/txt_server_address"
+        tools:ignore="HardcodedText,LabelFor,MissingConstraints,TextFields"
+        app:layout_constraintStart_toEndOf="@id/txt_server_address_label"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Server Port: "
+        android:id="@+id/txt_server_port_label"
+        tools:ignore="HardcodedText"
+        app:layout_constraintTop_toBottomOf="@id/txt_server_address_label"
+        app:layout_constraintEnd_toStartOf="@id/txt_server_port"
+        app:layout_constraintBottom_toBottomOf="@id/txt_server_port"
+        app:layout_constraintTop_toTopOf="@id/txt_server_port"
+        android:textSize="18sp"/>
+
+    <AutoCompleteTextView
+        android:imeOptions="flagNoExtractUi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="80"
+        android:id="@+id/txt_server_port"
+        tools:ignore="HardcodedText,LabelFor"
+        app:layout_constraintTop_toBottomOf="@id/txt_server_address"
+        app:layout_constraintStart_toStartOf="@id/txt_server_address"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Status: Disconnect"
+        android:id="@+id/txt_status"
+        app:layout_constraintBottom_toBottomOf="@id/txt_server_address"
+        app:layout_constraintTop_toTopOf="@id/txt_server_address"
+        app:layout_constraintStart_toStartOf="@id/btn_connect_to_server"
+        tools:ignore="HardcodedText"
+        android:textSize="18sp"/>
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/img_status_icon"
+        android:src="@drawable/ic_disconnected"
+        app:layout_constraintStart_toEndOf="@id/txt_status"
+        app:layout_constraintTop_toTopOf="@id/txt_status"
+        android:layout_marginStart="10dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connect to server"
+        android:id="@+id/btn_connect_to_server"
+        app:layout_constraintBottom_toBottomOf="@id/txt_server_port"
+        app:layout_constraintTop_toTopOf="@id/txt_server_port"
+        app:layout_constraintStart_toEndOf="@id/txt_server_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText"
+        android:textAllCaps="false"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_connect_to_server"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/lightbulb"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
